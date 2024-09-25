@@ -49,7 +49,6 @@ nav ul li a:hover {
     color: #FFD700;
 }
 
-/* Main content styling */
 main {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -103,7 +102,6 @@ aside ul li a:hover {
     text-decoration: underline;
 }
 
-/* Footer Styling */
 footer {
     background-color: #003366;
     color: white;
@@ -119,4 +117,63 @@ footer p {
 
 footer #lastModified {
     color: #FFD700;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .about, .location {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .about, .location {
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+    }
+
+    .about img, .location img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 1rem;  
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem; 
+
+    .card, aside {
+        padding: 1rem;
+    }
+
+    footer {
+        font-size: 0.8rem; 
+    }
+}
 }
