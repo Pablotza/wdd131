@@ -1,0 +1,29 @@
+/* Layout for screens larger than 768px */
+nav ul {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.temple-gallery {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on larger screens */
+    gap: 2rem;
+    padding: 2rem;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+figure img:hover {
+    transform: scale(1.05); /* Slight zoom on hover for a nice effect */
+}
+
+footer {
+    padding: 1rem;
+    background-color: #4b006e;
+    color: white;
+    text-align: center;
+}
