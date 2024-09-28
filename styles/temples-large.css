@@ -1,13 +1,22 @@
-/* Layout for screens larger than 768px */
+/* Layout para pantallas grandes */
 nav ul {
     flex-direction: row;
     justify-content: center;
 }
 
 .temple-gallery {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on larger screens */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas grandes */
     gap: 2rem;
     padding: 2rem;
+}
+
+figure {
+    text-align: center;
+    margin: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 figure img {
@@ -18,12 +27,13 @@ figure img {
 }
 
 figure img:hover {
-    transform: scale(1.05); /* Slight zoom on hover for a nice effect */
+    transform: scale(1.05); /* Zoom suave al hacer hover */
 }
 
-footer {
-    padding: 1rem;
-    background-color: #4b006e;
-    color: white;
-    text-align: center;
+/* Para pantallas más grandes (ejemplo: pantallas > 1200px) */
+@media (min-width: 1200px) {
+    .temple-gallery {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas más grandes */
+        grid-template-rows: repeat(3, auto); /* Tres filas en pantallas más grandes */
+    }
 }

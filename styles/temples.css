@@ -8,50 +8,79 @@ body {
 header {
     text-align: center;
     padding: 1rem;
-    background-color: #a39d6f;
+    background-color: #a39d6f; /* Color mantenido */
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si es necesario */
 }
 
-.menu-icon {
+header h1 {
+    margin: 0;
     font-size: 1.5rem;
-    cursor: pointer;
+    flex: 1 1 100%; /* Ocupa toda la línea en pantallas pequeñas */
+    text-align: center; /* Centra el texto */
 }
 
-nav ul {
+header nav {
+    display: flex;
+    align-items: center;
+    flex: 1 1 100%; /* Ocupa toda la línea en pantallas pequeñas */
+    justify-content: center; /* Centra el menú */
+}
+
+header nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
 }
 
-nav ul li {
-    margin: 0.5rem 0;
+header nav ul li {
+    margin: 0 0.5rem;
 }
 
-nav ul li a {
+header nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
 }
 
-nav ul li a:hover {
+header nav ul li a:hover {
     color: #ff6347; /* Hover effect */
 }
 
-main {
-    margin: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
+.menu-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* Oculto en pantallas grandes */
+}
+
+/* Ajustes adicionales para pantallas pequeñas */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .menu-icon {
+        display: block; /* Mostrar en pantallas pequeñas */
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none; /* Oculto por defecto */
+    }
+
+    nav ul.show {
+        display: flex; /* Mostrar cuando se hace clic en el icono del menú */
+    }
 }
 
 .temple-gallery {
     display: grid;
-    grid-template-columns: 1fr; /* Single column on mobile */
+    grid-template-columns: 1fr; /* Una columna en móviles */
     gap: 1.5rem;
     padding: 1rem;
 }
@@ -72,7 +101,9 @@ figure img {
 
 footer {
     text-align: center;
-    padding: 1rem;
-    background-color: #a39d6f;
+    padding: 1.5rem;
+    background-color: #a39d6f; /* Color mantenido */
     color: white;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 6px rgba(0,0,0,0.1); /* Sombra */
 }

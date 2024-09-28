@@ -7,6 +7,15 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('lastModified').textContent = lastModified;
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.querySelector('.menu-icon');
+    const navUl = document.querySelector('nav ul');
+
+    menuIcon.addEventListener('click', function() {
+        navUl.classList.toggle('show');
+    });
+});
+
 // Add hamburger menu toggle for mobile view
 const nav = document.querySelector('nav ul');
 const hamburgerButton = document.createElement('button');
@@ -24,3 +33,4 @@ hamburgerButton.addEventListener('click', function () {
         hamburgerButton.textContent = 'X'; // Close symbol
     }
 });
+
