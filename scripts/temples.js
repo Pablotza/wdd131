@@ -1,4 +1,3 @@
-// Add dynamic footer functionality for year and last modified date
 document.addEventListener('DOMContentLoaded', function () {
     const currentYear = new Date().getFullYear();
     document.getElementById('currentYear').textContent = currentYear;
@@ -16,21 +15,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add hamburger menu toggle for mobile view
-const nav = document.querySelector('nav ul');
-const hamburgerButton = document.createElement('button');
-hamburgerButton.textContent = '☰'; // Hamburger symbol
-hamburgerButton.classList.add('hamburger');
+document.addEventListener('DOMContentLoaded', function() {
+    const nav = document.querySelector('nav ul');
+    const header = document.querySelector('header');
 
-document.querySelector('header').appendChild(hamburgerButton);
+    if (window.innerWidth <= 768) {
+        const hamburgerButton = document.createElement('button');
+        hamburgerButton.textContent = '☰'; // Hamburger symbol
+        hamburgerButton.classList.add('hamburger');
 
-hamburgerButton.addEventListener('click', function () {
-    if (nav.style.display === 'block') {
-        nav.style.display = 'none';
-        hamburgerButton.textContent = '☰'; // Revert to hamburger
-    } else {
-        nav.style.display = 'block';
-        hamburgerButton.textContent = 'X'; // Close symbol
+        header.appendChild(hamburgerButton);
+
+        hamburgerButton.addEventListener('click', function () {
+            if (nav.style.display === 'block') {
+                nav.style.display = 'none';
+                hamburgerButton.textContent = '☰';
+            } else {
+                nav.style.display = 'block';
+                hamburgerButton.textContent = 'X'; 
+            }
+        });
     }
 });
-
