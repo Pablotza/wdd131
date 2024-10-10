@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+header {
+    text-align: center;
+    padding-top: 30px;
+    width: 100%;
+    height: 100px;
+    background-color: peru;
+    color: white;
+}
+
+main {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+    z-index: 1; 
+}
+
+
+#hero {
+    width: 100%;
+    height: 400px;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+#hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+#overlay {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    z-index: 1; 
+    padding-top: 400px; 
+}
+
+#data, #weather {
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+@media (min-width: 600px) {
+    #overlay {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px;
+    }
+
+    #data {
+        grid-column: 1 / 2; 
+    }
+
+    #weather {
+        grid-column: 2 / 3; 
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 20px;
+        grid-column: span 2;
+        background-color: peru;
+    }
+}
+
+
+@media (max-width: 599px) {
+    #hero {
+        position: relative;
+        height: 200px; 
+        width: 100%;
+    }
+
+    #overlay {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0; 
+    }
+
+    #data, #weather {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+footer {
+    background-color: peru;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}

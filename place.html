@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perú</title>
+    <link rel="stylesheet" href="./styles/place.css">
+</head>
+<body>
+    <header>
+        <h1>Perú</h1>
+    </header>
+
+    <main>
+        <section id="hero">
+            <img src="./images/perú-hero-image.webp" alt="Perú view">
+        </section>
+
+        <div id="overlay">
+            <section id="data">
+                <h2>Data</h2>
+                <p>Area: 2,672.3 sq km</p>
+                <p>Population: 9,751,717</p>
+                <p>Capital: Lima</p>
+                <p>Languages: Spanish</p>
+                <p>Currency: Peruvian Sol</p>
+                <p>Time Zone: UTC-5</p>
+                <p>Calling Code: +51</p>
+                <p>Internet TLD: .pe</p>
+            </section>
+
+            <section id="weather">
+                <h2>Weather <span class="weather-icon">⛅</span></h2>
+                <p>Temperature: 15°C</p>
+                <p>Conditions: Cloudy</p>
+                <p>Wind: 10 km/h</p>
+                <p>Wind Chill: <span id="wind-chill">N/A</span></p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Pablo Emanuel Toloza, Lima, Perú</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+
+    <script src="./scripts/windchill.js" defer></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('last-modified').textContent = document.lastModified;
+    </script>
+</body>
+</html>
