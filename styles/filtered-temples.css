@@ -1,0 +1,134 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 1rem;
+    background-color: #a39d6f; /* Color mantenido */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si es necesario */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    flex: 1 1 100%; /* Ocupa toda la línea en pantallas pequeñas */
+    text-align: center; /* Centra el texto */
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    flex: 1 1 100%; /* Ocupa toda la línea en pantallas pequeñas */
+    justify-content: center; /* Centra el menú */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+header nav ul li {
+    margin: 0 0.5rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #ff6347; /* Hover effect */
+}
+
+.menu-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* Oculto en pantallas grandes */
+}
+
+/* Ajustes adicionales para pantallas pequeñas */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .menu-icon {
+        display: block; /* Mostrar en pantallas pequeñas */
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none; /* Oculto por defecto */
+    }
+
+    nav ul.show {
+        display: flex; /* Mostrar cuando se hace clic en el icono del menú */
+    }
+}
+
+.temple-gallery {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna en móviles */
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+figure {
+    text-align: center;
+    margin: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #a39d6f; /* Color mantenido */
+    color: white;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 6px rgba(0,0,0,0.1); /* Sombra */
+}
+
+.hamburger {
+    display: none; /* Oculto por defecto */
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+}
+
+/* Mostrar el botón de hamburguesa en pantallas pequeñas */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        display: none; /* Ocultar el menú por defecto en pantallas pequeñas */
+    }
+
+    nav ul.show {
+        display: flex; /* Mostrar el menú cuando se hace clic en el botón de hamburguesa */
+        flex-direction: column;
+    }
+}
