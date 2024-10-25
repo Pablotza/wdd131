@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Form</title>
+    <link rel="stylesheet" href="./styles/forms.css">
+</head>
+<body>
+    <main>
+        <h1>Product Review Form</h1>
+        <form action="./review.html" method="get">
+            <!-- Product Name -->
+            <div class="form-group">
+                <label for="product-name">Product Name:</label>
+                <select id="product-name" name="productName" required>
+                    <option value="" disabled selected>Select a Product...</option>
+                </select>
+            </div>
+
+            <!-- Overall Rating -->
+            <fieldset class="form-group">
+                <legend>Overall Rating:</legend>
+                <label><input type="radio" name="rating" value="1" required> ☆</label>
+                <label><input type="radio" name="rating" value="2"> ☆☆</label>
+                <label><input type="radio" name="rating" value="3"> ☆☆☆</label>
+                <label><input type="radio" name="rating" value="4"> ☆☆☆☆</label>
+                <label><input type="radio" name="rating" value="5"> ☆☆☆☆☆</label>
+            </fieldset>
+
+            <!-- Date of Installation -->
+            <div class="form-group">
+                <label for="installation-date">Date of Installation:</label>
+                <input type="date" id="installation-date" name="installationDate" required>
+            </div>
+
+            <!-- Useful Features -->
+            <fieldset class="form-group">
+                <legend>Useful Features:</legend>
+                <label><input type="checkbox" id="feature1" name="features" value="feature1"> Feature 1</label>
+                <label><input type="checkbox" id="feature2" name="features" value="feature2"> Feature 2</label>
+                <label><input type="checkbox" id="feature3" name="features" value="feature3"> Feature 3</label>
+            </fieldset>
+
+            <!-- Written Review -->
+            <div class="form-group">
+                <label for="review">Written Review:</label>
+                <textarea id="review" name="reviewText" rows="4" cols="50"></textarea>
+            </div>
+
+            <!-- User Name -->
+            <div class="form-group">
+                <label for="username">User Name:</label>
+                <input type="text" id="username" name="username">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <input type="submit" value="Submit Review">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Pablo E. Toloza - Argentina 🇦🇷</p>
+        <p id="lastModified">Last Modification: </p>
+    </footer>
+
+    <script src="/scripts/forms.js"></script>
+</body>
+</html>
