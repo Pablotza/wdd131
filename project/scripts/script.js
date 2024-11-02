@@ -2,14 +2,21 @@ const carouselContainer = document.querySelector('.carousel-container');
 const slides = document.querySelectorAll('.carousel-slide');
 let currentSlide = 0;
 
+// Función para actualizar el carrusel
 function updateCarousel() {
-    const offset = -currentSlide * 100;
-    slides.forEach(slide => slide.style.transform = `translateX(${offset}%)`);
+    slides.forEach((slide, index) => {
+        slide.style.transform = `translateX(${(index - currentSlide) * 100}%)`;
+    });
 }
 
+// Función para pasar a la siguiente imagen
 function nextSlide() {
     currentSlide = (currentSlide + 1) % slides.length;
     updateCarousel();
 }
 
-setInterval(nextSlide, 3000);
+// Iniciar el carrusel y actualizar cada 3 segundos
+setInterval(nextSlide, 1500);
+
+// Inicializar posición del carrusel
+updateCarousel();
